@@ -13,15 +13,11 @@
   {{-- <link rel="shortcut icon" href="favicon.ico"> --}}
   {!!Html::style('css/main.css')!!}
   <!-- <link href="css/main.css" rel="stylesheet"> -->
-   {!!Html::style('css/semantic.min.css')!!}
+  {!!Html::style('https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.css')!!}
+ <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.css"/>-->
+  {!!Html::style('css/semantic.min.css')!!}
   <!-- <link href="css/semantic.min.css" rel="stylesheet"> -->
-  <!-- ***************************Files Javascript*********************************** -->
-  {!!Html::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')!!}
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
-  {!!Html::script('js/semantic.min.js')!!}
-  <!--<script src="js/semantic.min.js"></script>-->
-  {!!Html::script('js/main.js')!!}
-  <!--<script src="js/main.js"></script>-->
+  
  
 
  
@@ -62,7 +58,7 @@
                      <div class="ui grid">
                         <div class="row">
                            <div class="one wide column">
-                              <i class="large payment icon"></i>
+                             <i class="large cubes icon"></i>
                            </div>
                            <div class="ten wide column ">
                               <h4 class="h4-font">Productos</h4>
@@ -86,8 +82,8 @@
                      </div>
                     </a>
                     <div class="content">
-                        <a class="item "><h5 class="h4-font">Registro de Entrada</h5></a>
-                        <a class="item "><h5 class="h4-font">Ver Inventario</h5></a>
+                        <a href="{!!URL::to('/inventario/create')!!}" class="item "><h5 class="h4-font">Registro de Entrada</h5></a>
+                        <a  href="{!!URL::to('/inventario')!!}"class="item "><h5 class="h4-font">Ver Inventario</h5></a>
                         <a class="item "><h5 class="h4-font">Subsection 1</h5></a>
                     </div>
                   </div>
@@ -164,5 +160,15 @@
                 </div>
               </div>
             
+
+            <!-- ***************************Files Javascript*********************************** -->
+  {!!Html::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')!!}
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+  <!--<script type="text/javascript" src="https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.js"></script>-->
+  {!!Html::script('js/semantic.min.js')!!}
+  {!!Html::script('https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.js')!!}
+  <!--<script src="js/semantic.min.js"></script>-->
+  {!!Html::script('js/main.js')!!}
+  <!--<script src="js/main.js"></script>-->
 </body>
 </html>

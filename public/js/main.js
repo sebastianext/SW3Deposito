@@ -7,6 +7,8 @@ $(document).ready(function(){
       });
 
 
+    
+
     $('.addCliente').click(function(){
      	$('.addCliente').addClass('loading');
       });
@@ -38,6 +40,8 @@ $(document).ready(function(){
       //obtiene el id del item y lo guarda en el local storage
         localStorage.setItem("idItem",this.id);
     });
+
+    // $('#tableClientes').DataTable();
 });
 window.onload = function(e){ 
   //busca el elemento con el query selector y remueve la clase "active"

@@ -47,4 +47,6 @@ Route::group(['middleware' => ['web']], function () {
 	Route::resource('/','FrontController@index');
 	Route::resource('cliente','ClienteController');
 	Route::resource('producto','ProductoController');
+	Route::resource('inventario','InventarioController');
+	// Route::resource('inventario/detalle','InventarioController@detalle');
 });

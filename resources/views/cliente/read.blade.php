@@ -30,7 +30,7 @@
       </div>
     @endif
 
- <table class="ui striped celled selectable table blue">
+ <table class="ui striped celled selectable table blue" id="tableClientes">
   <thead>
     <tr>
       <th colspan="12">
