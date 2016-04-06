@@ -12,8 +12,8 @@ class InventarioController extends Controller
 {
     //
     /*
-
     */
+
     public function index(){
     	$productosInventario= EntradaInventarioModel::Productos();
         // echo var_dump($productosInventario);
@@ -52,7 +52,7 @@ class InventarioController extends Controller
 
         $detalles=EntradaInventarioModel::DetallesProductos($id);
         return view('inventario.detalle',['stocks'=>$stocks,'detalles'=>$detalles]);
-        // return view('inventario.detalle',['entradas'=>$entradas,'salidas'=>$salidas]);
+      
 
     	// $productosInventario= EntradaInventarioModel::find($id);
         // $productos=ProductoModel::lists('nombre','id');

@@ -91,16 +91,11 @@
     <tr>
       <th colspan="12">
         Detalles del Producto
-        <a href="{!!URL::to('/inventario/create')!!}">
-        <div class="ui right floated small addCliente primary labeled icon button">
-          <i class="cubes icon"></i>Crear inventario
-        </div>
-        </a>
       </th>
     </tr>
     <tr>
-      <th>Producto</th>
-      <th>Disponible</th>
+      <th>Cantidad</th>
+      <th>Operacion</th>
     </tr>
   </thead>
   @foreach ($detalles as $detalle)
