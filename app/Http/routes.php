@@ -13,7 +13,7 @@
 
 
 //Route::resource('cliente','FrontController@cliente');
-Route::resource('credito','FrontController@credito');
+//Route::resource('credito','FrontController@credito');
 
 // Route::resource('cliente','ClienteController');
 /*
