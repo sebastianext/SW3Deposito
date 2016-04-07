@@ -53,7 +53,7 @@
                         </div>
                      </div>
                    </a>
-                   <div class="ui inverted divider no-margin no-border-top"></div>
+                   <div class="ui  divider hidden no-margin no-border-top"></div>
                     <a href="{!!URL::to('/producto')!!}" class="item"  id="producto">
                      <div class="ui grid">
                         <div class="row">
@@ -66,7 +66,7 @@
                         </div>
                      </div>
                    </a>
-                   <div class="ui inverted divider no-margin no-border-top"></div>
+                   <div class="ui  divider hidden no-margin no-border-top"></div>
                    <div class="item">
                     <a class="title">
                       <i class="dropdown icon margin-acordion"></i>
@@ -87,7 +87,7 @@
                         <a class="item "><h5 class="h4-font">Subsection 1</h5></a>
                     </div>
                   </div>
-                  <div class="ui inverted divider no-margin no-border-top"></div>
+                  <div class="ui divider hidden no-margin no-border-top"></div>
                    <div class="item">
                     <a class="title">
                       <i class="dropdown icon margin-acordion"></i>
@@ -108,7 +108,8 @@
                         <a class="item "><h5 class="h4-font">Subsection 1</h5></a>
                     </div>
                   </div>
-                   <div class="ui inverted divider no-margin no-border-top"></div>
+                   <div class="ui divider hidden no-margin no-border-top"></div>
+              
                     <a class="item">
                      <div class="ui grid">
                         <div class="row">
@@ -121,10 +122,7 @@
                         </div>
                      </div>
                    </a>
-                  <div class="ui inverted divider no-margin no-border-top"></div>
-                 
-
-                  <div class="ui inverted divider no-margin no-border-top"></div>
+                
                    
 
 

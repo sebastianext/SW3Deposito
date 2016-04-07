@@ -30,7 +30,7 @@
       </div>
     @endif
 
- <table class="ui striped celled selectable table blue">
+ <table class="ui striped celled selectable table blue" id="tableDataTable">
   <thead>
     <tr>
       <th colspan="12">
@@ -51,8 +51,9 @@
       <th class="collapsing">Eliminar</th>
     </tr>
   </thead>
-  @foreach ($productos as $producto)
+  
     <tbody>
+    @foreach ($productos as $producto)
       <tr>
         <td>
           {!! Html::decode(link_to_route('producto.edit', '<i class="large edit icon"></i>',$producto->id, null))!!}
@@ -67,8 +68,9 @@
         </td>
         
       </tr>
+      @endforeach
     </tbody>
-  @endforeach
+  
 </table>
 @stop
 

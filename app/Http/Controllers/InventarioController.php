@@ -8,6 +8,7 @@ use Deposito\Http\Requests;
 use Deposito\EntradaInventarioModel;
 use Deposito\ProductoModel;
 
+
 class InventarioController extends Controller
 {
     //

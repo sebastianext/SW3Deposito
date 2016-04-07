@@ -85,8 +85,8 @@
     </div>
   </div>
 </div>
-<div class="ui divider"></div>
-<table class="ui striped celled selectable table blue" id="tableDataTable">
+
+<table class="ui striped celled selectable table blue">
   <thead>
     <tr>
       <th colspan="12">
@@ -98,16 +98,14 @@
       <th>Operacion</th>
     </tr>
   </thead>
-  
+  @foreach ($detalles as $detalle)
     <tbody>
-    @foreach ($detalles as $detalle)
       <tr>
         <td>{{ $detalle->cantidad}}</td>
         <td>{{ $detalle->operacion}}</td>
       </tr>
-      @endforeach
     </tbody>
-  
+  @endforeach
 </table>
 
 @stop

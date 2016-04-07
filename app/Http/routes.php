@@ -13,7 +13,7 @@
 
 
 //Route::resource('cliente','FrontController@cliente');
-Route::resource('credito','FrontController@credito');
+//Route::resource('credito','FrontController@credito');
 
 // Route::resource('cliente','ClienteController');
 /*
@@ -41,12 +41,13 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', [
-	    'as' => 'cliente',
-	    'uses' => 'ClienteController@'
+	    'as' => 'index',
+	    'uses' => 'FrontController@'
 	]);
 	Route::resource('/','FrontController@index');
 	Route::resource('cliente','ClienteController');
 	Route::resource('producto','ProductoController');
 	Route::resource('inventario','InventarioController');
+	Route::resource('venta','VentaController');
 	// Route::resource('inventario/detalle','InventarioController@detalle');
 });
