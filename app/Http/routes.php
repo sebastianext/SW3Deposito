@@ -40,14 +40,15 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/', [
-	    'as' => 'index',
-	    'uses' => 'FrontController@'
-	]);
-	Route::resource('/','FrontController@index');
+    
+	Route::get('/','FrontController@index');
+	Route::get('/inicio','FrontController@inicio');
 	Route::resource('cliente','ClienteController');
 	Route::resource('producto','ProductoController');
 	Route::resource('inventario','InventarioController');
 	Route::resource('venta','VentaController');
+
+	Route::get('clientes/pdf','PdfClienteController@invoice');
+	Route::get('pdf', 'PdfController@invoice');
 	// Route::resource('inventario/detalle','InventarioController@detalle');
 });

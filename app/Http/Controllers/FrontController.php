@@ -9,10 +9,10 @@ use Deposito\Http\Requests;
 class FrontController extends Controller
 {
     public function index(){
-    	return view('index');
+    	return view('welcome');
     }
 
-    public function cliente(){
-    	return view('cliente');
+    public function inicio(){
+    	return view('index');
     }
 }

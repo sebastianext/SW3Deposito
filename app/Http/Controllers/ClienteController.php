@@ -18,6 +18,7 @@ class ClienteController extends Controller
     	return view('cliente.read',compact('clientes'));
     }
 
+
     public function edit($id){
     	$cliente= ClienteModel::find($id);
     	return view('cliente.edit',['cliente'=>$cliente]);
@@ -56,5 +57,18 @@ class ClienteController extends Controller
     	]);
 
     	return redirect('/cliente')->with('mensaje','ingreso');
+    }
+
+     public function invoice() {
+        $data = ClienteModel::All();;
+        $date = date('Y-m-d');
+        $titulo = "Listado de Clientes";
+        $view =  \View::make('cliente.pdf.invoice', compact('data', 'date', 'titulo'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        //muestra el pdf
+        //return $pdf->stream('invoice');
+        //descarga el pdf
+        return $pdf->download('clientes.pdf');
     }
 }
