@@ -82,6 +82,36 @@ $(document).ready(function(){
     });
 
   $('.dataTables_length').css('margin-bottom','10px');
+
+
+
+
+$('#container').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Movimientos Productos'
+        },
+        xAxis: {
+            categories: ['Agua', 'Vino', 'Ron']
+        },
+        yAxis: {
+            title: {
+                text: 'Unidades'
+            }
+        },
+        series: [{
+            name: 'Salidas',
+            data: [1, 3, 4]
+        }, {
+            name: 'Entradas',
+            data: [5, 7, 6]
+        }]
+    });
+
+
+
       
 });
 window.onload = function(e){ 

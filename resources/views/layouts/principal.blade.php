@@ -109,7 +109,20 @@
                     </div>
                   </div>
                    <div class="ui divider hidden no-margin no-border-top"></div>
-              
+                    
+                  <a class="item" href="{!!URL::to('/usuario')!!}">
+                     <div class="ui grid">
+                        <div class="row">
+                           <div class="one wide column">
+                              <i class="large user icon"></i>
+                           </div>
+                           <div class="ten wide column ">
+                              <h4 class="h4-font">Usuarios</h4>
+                           </div>
+                        </div>
+                     </div>
+                   </a>
+
                     <a class="item">
                      <div class="ui grid">
                         <div class="row">
@@ -118,6 +131,19 @@
                            </div>
                            <div class="ten wide column ">
                               <h4 class="h4-font">Creditos</h4>
+                           </div>
+                        </div>
+                     </div>
+                   </a>
+
+                   <a class="item">
+                     <div class="ui grid">
+                        <div class="row">
+                           <div class="one wide column">
+                              <i class="large payment icon"></i>
+                           </div>
+                           <div class="ten wide column ">
+                              <h4 class="h4-font">Estadistica</h4>
                            </div>
                         </div>
                      </div>
@@ -167,6 +193,7 @@
   {!!Html::script('https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.js')!!}
   <!--<script src="js/semantic.min.js"></script>-->
   {!!Html::script('js/main.js')!!}
+  {!!Html::script('http://code.highcharts.com/highcharts.js')!!}
   <!--<script src="js/main.js"></script>-->
 </body>
 </html>

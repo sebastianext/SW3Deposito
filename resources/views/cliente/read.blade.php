@@ -46,12 +46,7 @@
           <div >Descargar</div>
           <div class="menu">
            
-            <a href="{!!URL::to('/clientes/pdf')!!}" class="item">
-            <div class="item">
-              <i class="file pdf outline icon"></i>
-              Pdf
-            </div>
-            </a>
+      
             
             <a href="{!!URL::to('/clientes/pdf')!!}" class="item">
             <div class="item">

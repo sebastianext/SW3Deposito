@@ -32,23 +32,16 @@
       <table>
         <thead>
           <tr>
-            <th class="service">Cedula</th>
-            <th class="desc">Nombres</th>
-            <th>Apellidos</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
-            <th>Correo</th>
+            <th class="service">Cantidad</th>
+            <th class="desc">Nombre</th>
+        
           </tr>
         </thead>
         <tbody>
             @foreach ($data as $da)
           <tr>
-            <td>{{ $da->cedula}}</td>
-            <td>{{ $da->nombres}}</td>
-            <td>{{ $da->apellidos}}</td>
-            <td>{{ $da->direccion}}</td>
-            <td>{{ $da->telefono}}</td>
-            <td>{{ $da->correo}}</td>
+            <td>{{ $da->cantidad}}</td>
+            <td>{{ $da->nombre}}</td>
             <td>
           </tr>
            @endforeach

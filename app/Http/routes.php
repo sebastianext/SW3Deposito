@@ -45,6 +45,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/','FrontController@index');
 	Route::get('/inicio','FrontController@inicio');
 	Route::resource('cliente','ClienteController');
+	Route::resource('usuario','UsuarioController');
 	Route::resource('producto','ProductoController');
 	Route::resource('inventario','InventarioController');
 	Route::resource('venta','VentaController');
@@ -53,7 +54,11 @@ Route::group(['middleware' => ['web']], function () {
 	Route::resource('/recuperacion','MailController@index');
 
 	Route::get('clientes/pdf','PdfClienteController@invoice');
+	Route::get('productos/pdf','PdfProductoController@invoice');
+	Route::get('inventarios/pdf','PdfInventarioController@invoice');
+
 	Route::get('pdf', 'PdfController@invoice');
+
 
 	Route::get('password/email','Auth\PasswordController@getEmail');
 	Route::post('password/email','Auth\PasswordController@postEmail');
