@@ -46,57 +46,42 @@
     <h2 class="ui blue image header">
       <i class="lock icon"></i>
       <div class="content">
-        Log-in to your account
+        Recuperacion de Contraseña
       </div>
     </h2>
-    @include('alerts.errors')
-    {!! Form::open(['route'=>'login.store','method'=>'POST','class'=>'ui large form']) !!}
      
-      
-     
-    <!-- <form class="ui large form"> -->
+    
+    {!! Form::open(['url'=>'/password/email','class'=>'ui large form']) !!}
       <div class="ui stacked segment">
+      <p> Ingresa tu dirección de correo para restaurarla, Es posible que tengas que verificar tu carpeta de spam </p>
         <div class="field">
-          <div class="ui left icon input">
-            <i class="user icon"></i>
+          <div class="ui left fluid  icon input">
+            <i class="mail icon"></i>
             {!! Form::text('email',null,['placeholder'=>'Correo Electronico','id'=>'correo']) !!}
-            <!-- <input type="text" name="email" placeholder="E-mail address"> -->
-
           </div>
         </div>
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="lock icon"></i>
-            {!! Form::password('password',['placeholder'=>'****','id'=>'clave']) !!}
-            <!-- <input type="password" name="password" placeholder="Password"> -->
-          </div>
-        </div>
+         <div class="ui hidden divider"></div>
         {!! Form::submit('Aceptar',['class'=>'ui fluid large blue submit button']) !!}
-        <!-- <div class="ui fluid large blue submit button">Login</div> -->
       </div>
-
       <div class="ui error message"></div>
 
-    <!-- </form> -->
-
     {!! Form::close() !!}
+    
+  </div>
+</div>
 
-@if(Session::has('mensaje'))
+@if(Session::has('status'))
   <div class="ui green floating icon message">
        <i class="check circle icon"></i>
         <i class="close icon"></i>
         <div class="header">
           Ok!.  
         </div>
-        <div>&nbsp; {{Session::get('mensaje')}}</div>
+        <div>&nbsp; {{Session::get('status')}}</div>
       </div>
 @endif
-    <div class="ui message">
-       <!-- <a href="/recuperacion" >He olvidado mi contraseña</a> -->
-       <a href="password/email" >He olvidado mi contraseña</a>
-    </div>
-  </div>
-</div>
+
+
 
 
                 
@@ -104,8 +89,7 @@
             <!-- ***************************Files Javascript*********************************** -->
   {!!Html::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')!!}
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
-  <!--<scrip
-  t type="text/javascript" src="https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.js"></script>-->
+  <!--<script type="text/javascript" src="https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.js"></script>-->
   {!!Html::script('js/semantic.min.js')!!}
   {!!Html::script('https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.js')!!}
   <!--<script src="js/semantic.min.js"></script>-->

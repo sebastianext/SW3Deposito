@@ -5,9 +5,8 @@
 @section('content')
 
 
-
   <div class="ui breadcrumb">
-    <a  href="{!!URL::to('/')!!}" class="section">Inicio</a>
+    <a  href="{!!URL::to('/inicio')!!}" class="section">Inicio</a>
     <i class="right angle icon divider"></i>
     <div class="active section">Clientes</div>
   </div>

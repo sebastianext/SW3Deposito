@@ -18,6 +18,11 @@ $(document).ready(function(){
      	$(clasemodal).modal('show');
     });
 
+    // $('.recuperar').click(function(e){
+    
+    //   $('.ui.modal').modal('show');
+    // });
+
     $('.message .close')
       .on('click', function() {
         $(this).closest('.message').transition('fade');

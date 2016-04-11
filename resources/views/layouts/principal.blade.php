@@ -29,7 +29,7 @@
               <div id="menu-left" class="ui visible inverted left vertical sidebar menu ">
                 
                 <div class="ui fluid inverted vertical accordion menu">
-                <a href="{!!URL::to('/')!!}" class="item" id="inicio">
+                <a href="{!!URL::to('/inicio')!!}" class="item" id="inicio">
                    <div class="ui grid">
                         <div class="row">
                            <div class="one wide column">

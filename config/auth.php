@@ -68,6 +68,7 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => Deposito\User::class,
+            'table' => 'users',
         ],
 
         // 'users' => [
