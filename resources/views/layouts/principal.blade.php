@@ -140,7 +140,7 @@
                      <div class="ui grid">
                         <div class="row">
                            <div class="one wide column">
-                              <i class="large payment icon"></i>
+                              <i class="large bar chart icon"></i>
                            </div>
                            <div class="ten wide column ">
                               <h4 class="h4-font">Estadistica</h4>
