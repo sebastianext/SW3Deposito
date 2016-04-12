@@ -102,7 +102,7 @@
       <tr>
         <td>
         <!-- {!!link_to_route('cliente.edit', $title = 'Editar', $parameters = $cliente->id, $attributes = ['class'=>'large edit icon']);!!} -->
-        {!! Html::decode(link_to_route('cliente.edit', '<i class="large edit icon"></i>',$cliente->id, null))!!}
+        {!! Html::decode(link_to_route('cliente.edit', '<i class="large edit icon"></i>',$cliente->id, $attributes = ['id'=>'linkActualizar']))!!}
         </td>
         <td>{{ $cliente->cedula}}</td>
         <td>{{ $cliente->nombres}}</td>

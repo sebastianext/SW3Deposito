@@ -15,7 +15,7 @@
 				    <div class="field">
 					      <label>Cantidad</label>
 						    <div class="ui corner labeled input">
-						      {!! Form::text('cantidad',null,['placeholder'=>'10']) !!}
+						      {!! Form::text('cantidad',null,['placeholder'=>'10','id'=>'cantidad'] ) !!}
 						    </div>
 				    </div>
 			  	</div>

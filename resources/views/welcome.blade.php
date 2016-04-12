@@ -17,7 +17,7 @@
  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.css"/>-->
   {!!Html::style('css/semantic.min.css')!!}
   <!-- <link href="css/semantic.min.css" rel="stylesheet"> -->
-  
+  <title>Login Deposito de la Quinta</title>
  <style type="text/css">
     body {
       background-color: #DADADA;
@@ -46,7 +46,7 @@
     <h2 class="ui blue image header">
       <i class="lock icon"></i>
       <div class="content">
-        Log-in to your account
+        Ingrese a tu cuenta
       </div>
     </h2>
     @include('alerts.errors')

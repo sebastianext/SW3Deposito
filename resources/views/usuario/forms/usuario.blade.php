@@ -7,7 +7,7 @@
 		    <div class="field padding-right-campo">
 			      <label>Nombre</label>
 				    <div class="ui corner labeled input">
-				      {!! Form::text('name',null,['placeholder'=>'Nombre','id'=>'Nombre']) !!}
+				      {!! Form::text('name',null,['placeholder'=>'Nombre','id'=>'nombre']) !!}
 				      <div class="ui obligatorio corner label">
 					  			<i class="asterisk icon"></i>
 							</div>

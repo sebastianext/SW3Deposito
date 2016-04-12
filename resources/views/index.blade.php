@@ -13,5 +13,20 @@
   </div>
   </div>
 
-  <div id="container" style="width:100%; height:400px;"></div>
+<div class="ui two cards">
+  <div class="green card">
+    <div class="image">
+    <div id="container" ></div>
+    </div>
+  </div>
+
+  <div class="green card">
+    <div class="image">
+    <div id="container" ></div>
+    </div>
+  </div>
+  
+</div>
+
+  
 @stop
