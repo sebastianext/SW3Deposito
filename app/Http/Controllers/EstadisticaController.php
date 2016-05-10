@@ -23,7 +23,8 @@ class EstadisticaController extends Controller
 	}
 
     public function index(){
-        
+        $salidasArray;
+        $entradasArray;
         $nombres=EstadisticaModel::Productos2();
         foreach ($nombres as $nombre) { 
                 $categoryArray[]=$nombre->nombre;
@@ -36,7 +37,7 @@ class EstadisticaController extends Controller
         foreach ($entradas as $entrada) { 
                 $entradasArray[]= (int)$entrada->can;
         }
-        // return $salidasArray;
+      
         $yourFirstChart["chart"] = array("type" => "bar");
         $yourFirstChart["title"] = array("text" => "Movimientos Productos");
         $yourFirstChart["xAxis"] = array("categories" => $categoryArray);
