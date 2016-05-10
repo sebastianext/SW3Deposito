@@ -4,10 +4,11 @@ $(document).ready(function(){
 
       var producto=$('select[name=producto_id]').val();
       var token=$('#token').val();
-      var route='http://localhost:8000/ventas/'+producto;
-      var route2='http://localhost:8000/ventasDisponible/'+producto;
+      // var route='http://localhost:8000/ventas/'+producto;
+      // var route2='http://localhost:8000/ventasDisponible/'+producto;
 
-       
+       var route='http://sebastianext.koding.io/ventas/'+producto;
+       var route2='http://sebastianext.koding.io/ventasDisponible/'+producto;
         
       
       $.get(route,function(res){

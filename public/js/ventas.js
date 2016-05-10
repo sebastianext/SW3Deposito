@@ -3,7 +3,8 @@ $(document).ready(function(){
 
     $('#aceptar').click(function(){
       var token=$('#token').val();
-      var route='http://localhost:8000/venta';
+      // var route='http://localhost:8000/venta';
+      var route='http://sebastianext.koding.io//venta';
 
       var total=$('.total').text();
       var cliente=$('select[name=cliente_id]').val();
@@ -57,7 +58,8 @@ $(document).ready(function(){
               }
 
             });
-            window.location.href ="http://localhost:8000/venta";
+            // window.location.href ="http://localhost:8000/venta";
+            window.location.href ="http://sebastianext.koding.io/venta";
       }else{
         $('#mensajeError').html("<div class='ui error floating  message'><div class='header'>Error!.</div><div>"+
         "<ul class='list'>"+prodError+"</ul></div></div>");
