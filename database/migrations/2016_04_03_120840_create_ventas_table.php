@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCreditosTable extends Migration
+class CreateVentasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,12 @@ class CreateCreditosTable extends Migration
      */
     public function up()
     {
-        Schema::create('creditos', function (Blueprint $table) {
+       Schema::create('ventas', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('valor', 15, 2);
-            $table->double('abono', 15, 2);
-            $table->integer('tipo_contratacion');
+            $table->integer('total');
+            $table->timestamps();
             $table->integer('cliente_id')->unsigned();
             $table->foreign('cliente_id')->references('id')->on('clientes');
-            $table->string('descripcion');
-            $table->timestamps();
         });
     }
 
