@@ -7,16 +7,36 @@ use Illuminate\Http\Request;
 use Deposito\Http\Requests;
 use Deposito\VentaModel;
 use Deposito\ProductoModel;
+use Deposito\ClienteModel;
+use Deposito\VentasProductosModel;
+use Deposito\EntradaInventarioModel;
+
+use DB;
 
 class VentaController extends Controller
 {
-    //
-    /*
-    */
-
+    /**
+     *   Autor:Johan Sebastian Quintero
+     *   Versión: v1.0
+     *   Fecha: 08-04-2016 13:28
+     *   Descripción: contrucntor
+     *
+     * @return void
+     */
+     public function __construct(){
+        $this->middleware('auth');
+    }
+    /**
+     *   Autor:Johan Sebastian Quintero
+     *   Versión: v1.0
+     *   Fecha: 08-04-2016 13:28
+     *   Descripción: funcion que retorna la lista de registros a la vista perteneciente
+     *
+     * @return void
+     */
     public function index(){ 
-    	return view('venta.read');
-
+        $ventas= VentasProductosModel::Ventas();
+        return view('ventas.read',compact('ventas'));
     }
 
     public function detalle(){
@@ -25,60 +45,63 @@ class VentaController extends Controller
 
     }
 
-    public function edit($id){
-
-        $entradas= VentaModel::EntradasProductos($id);
-        $salidas = VentaModel::SalidaProductos($id);
-    
-        $a = array();
-         
-        foreach ($entradas as $entrada) {
-           $a['entradas']=$entrada->cantidad;
-        }
-        foreach ($salidas as $salida) {
-           $a['salidas'] = $salida->cantidad;
-        }
-       
-        $a['disponibles'] = $a['entradas']-$a['salidas'];
-        $stocks=json_encode($a);
-
-        $detalles=VentaModel::DetallesProductos($id);
-        return view('venta.detalle',['stocks'=>$stocks,'detalles'=>$detalles]);
-      
-
-    	// $productosventa= VentaModel::find($id);
-        // $productos=ProductoModel::lists('nombre','id');
-    	// return view('venta.edit',['productos'=>$productos,'productosventa'=>$productosventa]);
-    }
-
+    /**
+     *   Autor:Johan Sebastian Quintero
+     *   Versión: v1.0
+     *   Fecha: 08-04-2016 13:28
+     *   Descripción: funcion que retorna la vista de crear
+     *
+     * @return void
+     */
     public function create(){
+        $clientes =ClienteModel::lists('nombres','id');
         $productos=ProductoModel::lists('nombre','id');
-    	return view('venta.create',compact('productos'));
+    	return view('ventas.create',compact(['clientes','productos']));
     }
 
-	public function destroy($id){
+   
 
-    	VentaModel::destroy($id);
-    	Session::flash('mensaje','Elimino');
-    	return Redirect::to('/venta');
+    public function leerProducto($id){
+        $producto= ProductoModel::find($id);
+        return response()->json([
+                $producto->toArray()
+            ]);
     }
 
-    public function update($id,Request $request){
-    	$venta= VentaModel::find($id);
-    	$venta->fill($request->all());
-    	$venta->save();
-    	Session::flash('mensaje','edito');
-    	return Redirect::to('/venta');
+    public function disponible($id){
+        return EntradaInventarioModel::DisponibleProductos($id);
+        
     }
 
+    /**
+     *   Autor:Johan Sebastian Quintero
+     *   Versión: v1.0
+     *   Fecha: 08-04-2016 13:28
+     *   Descripción: funcion que almacena el registro en base de datos
+     *
+     * @return void
+     */
 
     public function store(Request $request){
-    	VentaModel::create([
-    		'cantidad'         =>$request['cantidad'],
-    		'operacion'        =>1,
-    		'producto_id'      =>$request['producto_id']
-    	]);
 
+        $id = DB::table('ventas')->insertGetId([
+            'total' => $request['total'], 
+            'cliente_id' => $request['cliente'],
+        ]);
+
+        $arr=json_decode($request['productos']);
+        foreach ($arr as $producto) {
+            VentasProductosModel::create([
+                'cantidad'=> $producto->cant,
+                'producto_id' => $producto->id,
+                'venta_id' =>$id
+            ]);
+            EntradaInventarioModel::create([
+            'cantidad'         =>-$producto->cant,
+            'operacion'        =>0,
+            'producto_id'      =>$producto->id,
+        ]);
+        }
     	return redirect('/venta')->with('mensaje','ingreso');
     }
 }

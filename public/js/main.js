@@ -86,29 +86,29 @@ $(document).ready(function(){
 
 
 
-$('#container').highcharts({
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Movimientos Productos'
-        },
-        xAxis: {
-            categories: ['Agua', 'Vino', 'Ron']
-        },
-        yAxis: {
-            title: {
-                text: 'Unidades'
-            }
-        },
-        series: [{
-            name: 'Salidas',
-            data: [1, 3, 4]
-        }, {
-            name: 'Entradas',
-            data: [5, 7, 6]
-        }]
-    });
+// $('#container').highcharts({
+//         chart: {
+//             type: 'bar'
+//         },
+//         title: {
+//             text: 'Movimientos Productos'
+//         },
+//         xAxis: {
+//             categories: ['Agua', 'Vino', 'Ron']
+//         },
+//         yAxis: {
+//             title: {
+//                 text: 'Unidades'
+//             }
+//         },
+//         series: [{
+//             name: 'Salidas',
+//             data: [1, 3, 4]
+//         }, {
+//             name: 'Entradas',
+//             data: [5, 7, 6]
+//         }]
+//     });
 
 
 

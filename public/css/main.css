@@ -11,8 +11,26 @@ border-radius: 10px;
 background-color: rgba(150,150,150,1);
 /*-webkit-box-shadow: inset 0 0 6px rgba(100,100,100,1);*/
 }
+.margen{
+	margin-top: 10px !important;
+    margin-left: 10px !important;
+}
+.letraBlanca{
+	color:white !important;
+}
+.letraNegra{
+	color:black !important;
+}
 
-
+.greenDispo{
+	background: #C8FDB7 !important;
+}
+.redDispo{
+	background: #FFDBDB !important;
+}
+.addProdcuto{
+	margin-top: 24px !important;
+}
 .centrar{
 	text-align: center !important; 
     display: block !important;

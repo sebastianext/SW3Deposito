@@ -9,7 +9,7 @@
     <div class="active section">Actualizar Clientes</div>
   </div>
 	<h3 class="ui header">Actualizar Cliente</h3>
-
+ @include('alerts.request')
 {!! Form::model($cliente,['route'=>['cliente.update',$cliente->id],'method'=>'PUT'])!!}
         	@include('cliente.forms.cliente')
 			{!! Form::submit('Aceptar',['class'=>'ui primary button']) !!}

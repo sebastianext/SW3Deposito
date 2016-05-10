@@ -8,7 +8,6 @@
   {!!Html::style('https://fonts.googleapis.com/icon?family=Material+Icons')!!}
   <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
   <!-- ***************************Files Css*********************************** -->
-
   {!!Html::style('favicon.ico')!!}
   {{-- <link rel="shortcut icon" href="favicon.ico"> --}}
   {!!Html::style('css/main.css')!!}
@@ -84,7 +83,7 @@
                     <div class="content">
                         <a href="{!!URL::to('/inventario/create')!!}" class="item "><h5 class="h4-font">Registro de Entrada</h5></a>
                         <a  href="{!!URL::to('/inventario')!!}"class="item "><h5 class="h4-font">Ver Inventario</h5></a>
-                        <a class="item "><h5 class="h4-font">Subsection 1</h5></a>
+                        
                     </div>
                   </div>
                   <div class="ui divider hidden no-margin no-border-top"></div>
@@ -103,9 +102,9 @@
                      </div>
                     </a>
                     <div class="content">
-                        <a class="item "><h5 class="h4-font">Realizar Venta</h5></a>
-                        <a class="item "><h5 class="h4-font">Listado de Ventas</h5></a>
-                        <a class="item "><h5 class="h4-font">Subsection 1</h5></a>
+                        <a href="{!!URL::to('/venta/create')!!}" class="item "><h5 class="h4-font">Realizar Venta</h5></a>
+                        <a href="{!!URL::to('/venta')!!}" class="item "><h5 class="h4-font">Listado de Ventas</h5></a>
+                       
                     </div>
                   </div>
                    <div class="ui divider hidden no-margin no-border-top"></div>
@@ -123,7 +122,7 @@
                      </div>
                    </a>
 
-                    <a class="item">
+                    <a  href="{!!URL::to('/credito')!!}" class="item">
                      <div class="ui grid">
                         <div class="row">
                            <div class="one wide column">
@@ -136,7 +135,7 @@
                      </div>
                    </a>
 
-                   <a class="item">
+                   <a class="item" href="{!!URL::to('/estadistica')!!}">
                      <div class="ui grid">
                         <div class="row">
                            <div class="one wide column">
@@ -168,12 +167,21 @@
              
               <div class="pusher">
                 <div class="ui inverted menu barra">
-                <div class="row">
+             
+              
                    <div class="column">
                       <i id="icon-movil" class="blue big sidebar icon movil"></i>
+                   </div>
+                    <div class="column">
+                       <div class="ui dropdown margen">
+                          <div class="text letraBlanca">{!!Auth::user()->name!!}</div>
+                          <i class="dropdown icon letraBlanca"></i>
+                          <div class="menu">
+                            <a href="/logout" class="item letraNegra">Salir</a>
+                          </div>
+                        </div>
                     </div>
-                  
-                </div>
+                
                     
                 </div>
 
@@ -183,8 +191,8 @@
 
                 </div>
               </div>
-            
-
+           
+       
             <!-- ***************************Files Javascript*********************************** -->
   {!!Html::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')!!}
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
@@ -193,7 +201,12 @@
   {!!Html::script('https://cdn.datatables.net/t/dt/dt-1.10.11/datatables.min.js')!!}
   <!--<script src="js/semantic.min.js"></script>-->
   {!!Html::script('js/main.js')!!}
+  {!!Html::script('js/ventas.js')!!}
   {!!Html::script('http://code.highcharts.com/highcharts.js')!!}
   <!--<script src="js/main.js"></script>-->
+
+   @section('scripts')
+
+            @show
 </body>
 </html>

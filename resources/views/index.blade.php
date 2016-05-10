@@ -13,20 +13,4 @@
   </div>
   </div>
 
-<div class="ui two cards">
-  <div class="green card">
-    <div class="image">
-    <div id="container" ></div>
-    </div>
-  </div>
-
-  <div class="green card">
-    <div class="image">
-    <div id="container" ></div>
-    </div>
-  </div>
-  
-</div>
-
-  
 @stop

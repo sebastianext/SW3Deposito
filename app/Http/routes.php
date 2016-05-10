@@ -12,22 +12,6 @@
 */
 
 
-//Route::resource('cliente','FrontController@cliente');
-//Route::resource('credito','FrontController@credito');
-
-// Route::resource('cliente','ClienteController');
-/*
-Route::resource('cliente','ClienteController');
-
-Route::get('prueba', function () {
-    return "hola sebastian";
-});
-
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -40,30 +24,30 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-	
     Route::auth();
-	Route::get('/','FrontController@index');
+    Route::get('/','FrontController@index');
 	Route::get('/inicio','FrontController@inicio');
+	Route::get('logout','LoginController@logout');
+	Route::get('pdf', 'PdfController@invoice');
+	Route::get('estadistica', 'EstadisticaController@index');
+	Route::get('estadisticaRecargar', 'EstadisticaController@productos');
+	Route::get('estadisticaSalidas', 'EstadisticaController@salidas');
+	Route::get('clientes/pdf','PdfClienteController@invoice');
+	Route::get('productos/pdf','PdfProductoController@invoice');
+	Route::get('inventarios/pdf','PdfInventarioController@invoice');
+	Route::get('ventas/{id}','VentaController@leerProducto');
+	Route::get('ventasDisponible/{id}','VentaController@disponible');
+	Route::get('password/email','Auth\PasswordController@getEmail');
+	Route::get('password/reset/{token}','Auth\PasswordController@getReset');
+	Route::post('password/email','Auth\PasswordController@postEmail');
+	Route::post('password/reset','Auth\PasswordController@postReset');
 	Route::resource('cliente','ClienteController');
 	Route::resource('usuario','UsuarioController');
 	Route::resource('producto','ProductoController');
+	Route::resource('credito','CreditoController');
 	Route::resource('inventario','InventarioController');
 	Route::resource('venta','VentaController');
 	Route::resource('/login','LoginController');
 	Route::resource('/mail','MailController');
 	Route::resource('/recuperacion','MailController@index');
-
-	Route::get('clientes/pdf','PdfClienteController@invoice');
-	Route::get('productos/pdf','PdfProductoController@invoice');
-	Route::get('inventarios/pdf','PdfInventarioController@invoice');
-
-	Route::get('pdf', 'PdfController@invoice');
-
-
-	Route::get('password/email','Auth\PasswordController@getEmail');
-	Route::post('password/email','Auth\PasswordController@postEmail');
-
-	Route::get('password/reset/{token}','Auth\PasswordController@getReset');
-	Route::post('password/reset','Auth\PasswordController@postReset');
-	// Route::resource('inventario/detalle','InventarioController@detalle');
 });

@@ -46,7 +46,7 @@
     <h2 class="ui blue image header">
       <i class="lock icon"></i>
       <div class="content">
-        Ingrese a tu cuenta
+        Ingrese a tu cuenta 
       </div>
     </h2>
     @include('alerts.errors')

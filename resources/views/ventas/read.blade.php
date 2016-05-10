@@ -9,13 +9,13 @@
   <div class="ui breadcrumb">
     <a  href="{!!URL::to('/')!!}" class="section">Inicio</a>
     <i class="right angle icon divider"></i>
-    <div class="active section">Ver Inventario</div>
+    <div class="active section">Lista de ventas</div>
   </div>
 
   <div class="ui divider"></div>
   <h2 class="ui center aligned icon header">
-    <i class="circular cubes icon"></i>
-    Inventarios
+    <i class="circular add to cart icon"></i>
+    Ventas
   </h2>
   <div class="ui divider"></div>
 
@@ -34,7 +34,7 @@
   <thead>
     <tr>
       <th colspan="12">
-        Listado de inventarios
+        Listado de ventas
         <a href="{!!URL::to('/inventario/create')!!}">
         <div class="ui right floated small addCliente primary labeled icon button">
           <i class="cubes icon"></i>Registro de Entrada
@@ -44,20 +44,17 @@
     </tr>
     <tr>
       <th>Producto</th>
-      <th>Disponible</th>
-      <th class="collapsing">Detalle</th>
+      <th>Cantidad</th>
+      <th  class="collapsing">Fecha de Creacion</th>
     </tr>
   </thead>
   
     <tbody>
-    @foreach ($productosInventario as $inventario)
+    @foreach ($ventas as $producto)
       <tr>
-        <td>{{ $inventario->nombre}}</td>
-        <td>{{ $inventario->cantidad}}</td>
-        <td>
-          {!! Html::decode(link_to_route('inventario.edit', '<i class="large unhide icon"></i>',$inventario->producto_id, null))!!}
-          
-        </td>
+        <td>{{ $producto->nombre}}</td>
+        <td>{{ $producto->cantidad}}</td>
+        <td>{{ $producto->created_at}}</td>
         
       </tr>
       @endforeach

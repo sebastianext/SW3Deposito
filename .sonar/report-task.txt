@@ -1,0 +1,5 @@
+projectKey=SW3Deposito-github
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/SW3Deposito-github
+ceTaskId=AVSY6d_73C8j2vOIBc1V
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVSY6d_73C8j2vOIBc1V

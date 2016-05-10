@@ -11,21 +11,29 @@ use Deposito\ProductoModel;
 
 class InventarioController extends Controller
 {
-    //
-    /*
-    */
+    /**
+     *   Autor:Johan Sebastian Quintero
+     *   Versión: v1.0
+     *   Fecha: 08-04-2016 13:28
+     *   Descripción: contrucntor
+     *
+     * @return void
+     */
+     public function __construct(){
+        $this->middleware('auth');
+    }
+    /**
+     *   Autor:Johan Sebastian Quintero
+     *   Versión: v1.0
+     *   Fecha: 08-04-2016 13:28
+     *   Descripción: funcion que retorna la lista de registros a la vista perteneciente
+     *
+     * @return void
+     */
 
     public function index(){
     	$productosInventario= EntradaInventarioModel::Productos();
-        // echo var_dump($productosInventario);
-        // foreach ($productosInventario as  $inventario) {
-        //    return  EntradaInventarioModel::NombreProducto($inventario->producto_id);
-        //    return $inventario->producto_id;
-        //    // EntradaInventarioModel::NombreProducto($inventario->nombre);
-        // }
-         
     	return view('inventario.read',compact('productosInventario'));
-
     }
 
     public function detalle(){
@@ -33,7 +41,14 @@ class InventarioController extends Controller
         return view('inventario.detalle');
 
     }
-
+    /**
+     *   Autor:Johan Sebastian Quintero
+     *   Versión: v1.0
+     *   Fecha: 08-04-2016 13:28
+     *   Descripción: funcion que retorna el registro para poder editarlo
+     *
+     * @return void
+     */
     public function edit($id){
 
         $entradas= EntradaInventarioModel::EntradasProductos($id);
@@ -53,25 +68,41 @@ class InventarioController extends Controller
 
         $detalles=EntradaInventarioModel::DetallesProductos($id);
         return view('inventario.detalle',['stocks'=>$stocks,'detalles'=>$detalles]);
-      
-
-    	// $productosInventario= EntradaInventarioModel::find($id);
-        // $productos=ProductoModel::lists('nombre','id');
-    	// return view('inventario.edit',['productos'=>$productos,'productosInventario'=>$productosInventario]);
     }
-
+    /**
+     *   Autor:Johan Sebastian Quintero
+     *   Versión: v1.0
+     *   Fecha: 08-04-2016 13:28
+     *   Descripción: funcion que retorna la vista de crear
+     *
+     * @return void
+     */
     public function create(){
         $productos=ProductoModel::lists('nombre','id');
     	return view('inventario.create',compact('productos'));
     }
-
+    /**
+     *   Autor:Johan Sebastian Quintero
+     *   Versión: v1.0
+     *   Fecha: 08-04-2016 13:28
+     *   Descripción: funcion que eliminar el registro 
+     *
+     * @return void
+     */
 	public function destroy($id){
 
     	EntradaInventarioModel::destroy($id);
     	Session::flash('mensaje','Elimino');
     	return Redirect::to('/inventario');
     }
-
+    /**
+     *   Autor:Johan Sebastian Quintero
+     *   Versión: v1.0
+     *   Fecha: 08-04-2016 13:28
+     *   Descripción: funcion que actualiza el registro en base de datos
+     *
+     * @return void
+     */
     public function update($id,Request $request){
     	$inventario= EntradaInventarioModel::find($id);
     	$inventario->fill($request->all());
@@ -79,7 +110,14 @@ class InventarioController extends Controller
     	Session::flash('mensaje','edito');
     	return Redirect::to('/inventario');
     }
-
+    /**
+     *   Autor:Johan Sebastian Quintero
+     *   Versión: v1.0
+     *   Fecha: 08-04-2016 13:28
+     *   Descripción: funcion que almacena el registro en base de datos
+     *
+     * @return void
+     */
 
     public function store(Request $request){
     	EntradaInventarioModel::create([

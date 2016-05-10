@@ -9,6 +9,14 @@ use Deposito\EntradaInventarioModel;
 
 class PdfInventarioController extends Controller
 {
+    /**
+     *   Autor:Johan Sebastian Quintero
+     *   Versión: v1.0
+     *   Fecha: 08-04-2016 13:28
+     *   Descripción: funcion que permite descargar el listado de registros en pdf
+     *
+     * @return void
+     */
      public function invoice() {
         $data = EntradaInventarioModel::Productos();
         $date = date('Y-m-d');
@@ -16,19 +24,9 @@ class PdfInventarioController extends Controller
         $view =  \View::make('inventario.pdf.invoice', compact('data', 'date', 'titulo'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
-        //muestra el pdf
-        // return $pdf->stream('invoice');
-        //descarga el pdf
+      
+        /** return $pdf->stream('invoice');*/
         return $pdf->download('Inventario.pdf');
     }
 
-    public function getData(){
-        $data =  [
-            'quantity'      => '1' ,
-            'description'   => 'some ramdom text',
-            'price'   => '500',
-            'total'     => '500'
-        ];
-        return $data;
-    }
 }

@@ -9,10 +9,10 @@
     <div class="active section">Actualizar Productos</div>
   </div>
 	<h3 class="ui header">Actualizar Producto</h3>
-
-{!! Form::model($producto,['route'=>['producto.update',$producto->id],'method'=>'PUT'])!!}
-        	@include('producto.forms.producto')
-			{!! Form::submit('Aceptar',['class'=>'ui primary button']) !!}
-{!! Form::close() !!}
+  @include('alerts.request')
+  {!! Form::model($producto,['route'=>['producto.update',$producto->id],'method'=>'PUT'])!!}
+          	@include('producto.forms.producto')
+  			{!! Form::submit('Aceptar',['class'=>'ui primary button']) !!}
+  {!! Form::close() !!}
 	
 @stop

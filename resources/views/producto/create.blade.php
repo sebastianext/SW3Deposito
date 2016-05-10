@@ -11,6 +11,7 @@
   </div>
 
 	<h3 class="ui header">Crear producto</h3>
+  @include('alerts.request')
 {!! Form::open(['route'=>'producto.store','method'=>'POST']) !!}
     	@include('producto.forms.producto')
       

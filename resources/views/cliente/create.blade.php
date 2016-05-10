@@ -11,6 +11,8 @@
   </div>
 
 	<h3 class="ui header">Crear Cliente</h3>
+
+  @include('alerts.request')
 {!! Form::open(['route'=>'cliente.store','method'=>'POST']) !!}
     	@include('cliente.forms.cliente')
       

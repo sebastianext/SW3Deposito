@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductosTable extends Migration
+class CreateCreditosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,14 @@ class CreateProductosTable extends Migration
      */
     public function up()
     {
-        Schema::create('productos', function (Blueprint $table) {
+        Schema::create('creditos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
-            $table->double('preciocompra', 15, 8);
-            $table->double('precioventa', 15, 8);
-            $table->integer('minimoinventario');
+            $table->double('valor', 15, 2);
+            $table->double('abono', 15, 2);
+            $table->integer('tipo_contratacion');
+            $table->integer('cliente_id')->unsigned();
+            $table->foreign('cliente_id')->references('id')->on('clientes');
             $table->string('descripcion');
-
             $table->timestamps();
         });
     }

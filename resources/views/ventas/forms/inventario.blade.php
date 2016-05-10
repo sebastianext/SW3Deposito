@@ -5,21 +5,12 @@
 		<div class="ui form">
 			  <div class="three fields">
 					<div class="field">
-					    <label>Producto</label>
-					    {!! Form::select('producto_id',$productos) !!}
+					    <label>Cliente</label>
+					    {!! Form::select('cliente_id',$clientes) !!}
 				  	</div>			
 			  </div>
-
-			  
-			    <div class="three fields">
-				    <div class="field">
-					      <label>Cantidad</label>
-						    <div class="ui corner labeled input">
-						      {!! Form::text('cantidad',null,['placeholder'=>'10']) !!}
-						    </div>
-				    </div>
-			  	</div>
 		</div>
+		
 	
 	<div class="ui hidden divider"></div>
                               

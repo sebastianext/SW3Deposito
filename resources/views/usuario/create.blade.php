@@ -11,6 +11,7 @@
   </div>
 
 	<h3 class="ui header">Crear Usuario</h3>
+  @include('alerts.request')
 {!! Form::open(['route'=>'usuario.store','method'=>'POST']) !!}
     	@include('usuario.forms.usuario')
       
