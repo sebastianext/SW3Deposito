@@ -71,14 +71,6 @@
               Word
             </div>
             </a>
-            <!-- <div class="item">
-              <i class="comment icon"></i>
-              Announcement
-            </div>
-            <div class="item">
-              <i class="conversation icon"></i>
-              Discussion
-            </div> -->
           </div>
         </div>
 
